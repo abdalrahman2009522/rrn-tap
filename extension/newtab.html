@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>New Tab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="newtab.css" />
+</head>
+<body>
+  <div id="bg" aria-hidden="true"></div>
+  <div id="orbs" aria-hidden="true">
+    <span class="orb orb-a"></span>
+    <span class="orb orb-b"></span>
+  </div>
+  <div id="scrim" aria-hidden="true"></div>
+
+  <main class="stage">
+    <section class="clock glass-strong">
+      <div id="time" class="time"></div>
+      <div id="date" class="date"></div>
+    </section>
+
+    <form id="search" class="search glass" autocomplete="off">
+      <select id="engine" aria-label="Search engine">
+        <option value="https://www.google.com/search?q=">Google</option>
+        <option value="https://duckduckgo.com/?q=">DuckDuckGo</option>
+        <option value="https://www.bing.com/search?q=">Bing</option>
+      </select>
+      <input id="q" type="text" placeholder="Search the web…" autofocus />
+      <button type="submit" aria-label="Search">→</button>
+    </form>
+
+    <section class="shortcuts glass" id="shortcuts"></section>
+  </main>
+
+  <button id="openSettings" class="fab glass-strong" aria-label="Background settings">✦</button>
+
+  <aside id="panel" class="panel glass-strong" hidden>
+    <header>
+      <h3>Background</h3>
+      <button id="closeSettings" aria-label="Close">×</button>
+    </header>
+    <div class="presets" id="presets"></div>
+    <label class="upload">
+      <input type="file" id="fileInput" accept="image/*" hidden />
+      <span>Import photo</span>
+    </label>
+    <button id="reset" class="reset">Reset to Aurora</button>
+
+    <h3 class="mt">Shortcuts</h3>
+    <div id="editShortcuts" class="edit-shortcuts"></div>
+    <button id="addShortcut" class="add">+ Add shortcut</button>
+  </aside>
+
+  <script src="newtab.js"></script>
+</body>
+</html>
