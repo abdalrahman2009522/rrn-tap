@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { BackgroundPanel } from "@/components/newtab/BackgroundPanel";
 import { Clock } from "@/components/newtab/Clock";
+import { InstallExtension } from "@/components/newtab/InstallExtension";
 import { SearchBar } from "@/components/newtab/SearchBar";
 import { Shortcuts } from "@/components/newtab/Shortcuts";
 import { useStoredState } from "@/hooks/use-stored-state";
@@ -68,6 +69,7 @@ function NewTab() {
       </div>
 
       <BackgroundPanel background={background} onChange={setBackground} />
+      <InstallExtension />
     </main>
   );
 }
