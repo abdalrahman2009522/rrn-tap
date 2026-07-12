@@ -101,9 +101,9 @@
 
 :root {
   --radius: 0.625rem;
-  --glass: oklch(1 0 0 / 10%);
-  --glass-strong: oklch(0.15 0.02 270 / 55%);
-  --glass-border: oklch(1 0 0 / 22%);
+  --glass: oklch(1 0 0 / 32%);
+  --glass-strong: oklch(1 0 0 / 55%);
+  --glass-border: oklch(1 0 0 / 45%);
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
