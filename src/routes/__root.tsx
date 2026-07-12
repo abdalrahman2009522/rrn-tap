@@ -77,22 +77,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Glass Tab — New Tab Dashboard" },
+      { title: "RRN Glass Tab — New Tab Dashboard" },
       {
         name: "description",
         content:
-          "A glassy new tab page with clock, search, shortcuts, animated backgrounds and custom photo import.",
+          "صفحة تبويب جديدة زجاجية تحتوي على ساعة، بحث، اختصارات، خلفيات | A glassy new tab page with clock, search, shortcuts, animated backgrounds, custom photo import.",
       },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Glass Tab — New Tab Dashboard" },
+      { property: "og:title", content: "RRN Glass Tab — New Tab Dashboard" },
       {
         property: "og:description",
         content:
-          "A glassy new tab page with clock, search, shortcuts, animated backgrounds and custom photo import.",
+          "صفحة تبويب جديدة زجاجية تحتوي على ساعة، بحث، اختصارات، خلفيات | A glassy new tab page with clock, search, shortcuts, animated backgrounds, custom photo import.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "RRN Glass Tab — New Tab Dashboard" },
+      { name: "twitter:description", content: "صفحة تبويب جديدة زجاجية تحتوي على ساعة، بحث، اختصارات، خلفيات | A glassy new tab page with clock, search, shortcuts, animated backgrounds, custom photo import." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/f758a5d9-994c-4691-8078-ca8f809ce3d3" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/f758a5d9-994c-4691-8078-ca8f809ce3d3" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -109,7 +113,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),
   shellComponent: RootShell,
