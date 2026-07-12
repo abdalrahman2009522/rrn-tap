@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react";
+
 export interface Shortcut {
   id: string;
   label: string;
@@ -8,7 +10,7 @@ export interface PresetBackground {
   id: string;
   name: string;
   className: string;
-  style: React.CSSProperties;
+  style: CSSProperties;
 }
 
 export type BackgroundState =
