@@ -1,0 +1,8 @@
+# RRN Glass Tab
+
+> A glassy new tab dashboard with a live clock, universal search, editable shortcuts, animated backgrounds, and custom photo imports. Installable as a Chrome, Edge, and Brave extension.
+
+## Pages
+
+- [Home](/): The new tab dashboard — clock, search bar, shortcuts, and animated background presets.
+- [Customize your Chrome new tab page](/guides/customize-chrome-new-tab): Step-by-step guide to personalizing your browser start page with Glass Tab.
