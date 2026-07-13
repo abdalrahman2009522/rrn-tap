@@ -40,7 +40,7 @@ export function Shortcuts({
   return (
     <div className="animate-fade-up flex flex-col items-center gap-4" style={{ animationDelay: "0.2s" }}>
       <div className="flex max-w-2xl flex-wrap items-start justify-center gap-3">
-        {shortcuts.map((s) => (
+        {shortcuts.map((s, i) => (
           <div key={s.id} className="group relative">
             <a
               href={s.url}
@@ -51,6 +51,10 @@ export function Shortcuts({
                 src={faviconFor(s.url)}
                 alt={`${s.label} favicon`}
                 className="h-7 w-7 rounded"
+                style={{
+                  animation: "icon-wave 3.5s ease-in-out infinite",
+                  animationDelay: `${i * 0.15}s`,
+                }}
                 loading="lazy"
               />
               <span className="w-full truncate text-center text-[11px] text-primary-foreground/80">
