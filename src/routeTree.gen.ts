@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GuidesCustomizeChromeNewTabRouteImport } from './routes/guides.customize-chrome-new-tab'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -22,31 +23,41 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GuidesCustomizeChromeNewTabRoute =
+  GuidesCustomizeChromeNewTabRouteImport.update({
+    id: '/guides/customize-chrome-new-tab',
+    path: '/guides/customize-chrome-new-tab',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/guides/customize-chrome-new-tab': typeof GuidesCustomizeChromeNewTabRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/guides/customize-chrome-new-tab': typeof GuidesCustomizeChromeNewTabRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/guides/customize-chrome-new-tab': typeof GuidesCustomizeChromeNewTabRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/sitemap.xml'
+  fullPaths: '/' | '/sitemap.xml' | '/guides/customize-chrome-new-tab'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/sitemap.xml'
-  id: '__root__' | '/' | '/sitemap.xml'
+  to: '/' | '/sitemap.xml' | '/guides/customize-chrome-new-tab'
+  id: '__root__' | '/' | '/sitemap.xml' | '/guides/customize-chrome-new-tab'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  GuidesCustomizeChromeNewTabRoute: typeof GuidesCustomizeChromeNewTabRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +76,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/guides/customize-chrome-new-tab': {
+      id: '/guides/customize-chrome-new-tab'
+      path: '/guides/customize-chrome-new-tab'
+      fullPath: '/guides/customize-chrome-new-tab'
+      preLoaderRoute: typeof GuidesCustomizeChromeNewTabRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  GuidesCustomizeChromeNewTabRoute: GuidesCustomizeChromeNewTabRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

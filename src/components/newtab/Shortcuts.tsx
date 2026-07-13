@@ -49,7 +49,7 @@ export function Shortcuts({
             >
               <img
                 src={faviconFor(s.url)}
-                alt=""
+                alt={`${s.label} favicon`}
                 className="h-7 w-7 rounded"
                 loading="lazy"
               />
