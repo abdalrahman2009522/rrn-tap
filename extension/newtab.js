@@ -72,7 +72,13 @@ function renderShortcuts() {
     const a = document.createElement("a");
     a.className = "shortcut";
     a.href = s.url;
-    a.innerHTML = `<img src="${faviconFor(s.url)}" alt=""><span>${s.label}</span>`;
+    const img = document.createElement("img");
+    img.src = faviconFor(s.url);
+    img.alt = "";
+    const span = document.createElement("span");
+    span.textContent = s.label;
+    a.appendChild(img);
+    a.appendChild(span);
     el.appendChild(a);
   });
 }
@@ -84,10 +90,17 @@ function renderEditShortcuts() {
   shortcuts.forEach((s, i) => {
     const row = document.createElement("div");
     row.className = "edit-row";
-    row.innerHTML = `
-      <input data-i="${i}" data-k="label" value="${s.label.replace(/"/g,'&quot;')}" placeholder="Label" />
-      <input data-i="${i}" data-k="url" value="${s.url.replace(/"/g,'&quot;')}" placeholder="https://" />
-      <button data-del="${i}">×</button>`;
+    const labelInput = document.createElement("input");
+    labelInput.dataset.i = i; labelInput.dataset.k = "label";
+    labelInput.value = s.label; labelInput.placeholder = "Label";
+    const urlInput = document.createElement("input");
+    urlInput.dataset.i = i; urlInput.dataset.k = "url";
+    urlInput.value = s.url; urlInput.placeholder = "https://";
+    const delBtn = document.createElement("button");
+    delBtn.dataset.del = i; delBtn.textContent = "×";
+    row.appendChild(labelInput);
+    row.appendChild(urlInput);
+    row.appendChild(delBtn);
     el.appendChild(row);
   });
   el.querySelectorAll("input").forEach(inp => {
