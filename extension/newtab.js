@@ -68,13 +68,14 @@ function faviconFor(url) {
 function renderShortcuts() {
   const el = $("#shortcuts");
   el.innerHTML = "";
-  shortcuts.forEach(s => {
+  shortcuts.forEach((s, i) => {
     const a = document.createElement("a");
     a.className = "shortcut";
     a.href = s.url;
     const img = document.createElement("img");
     img.src = faviconFor(s.url);
-    img.alt = "";
+    img.alt = `${s.label} favicon`;
+    img.style.setProperty("--wave-delay", `${i * 0.15}s`);
     const span = document.createElement("span");
     span.textContent = s.label;
     a.appendChild(img);
