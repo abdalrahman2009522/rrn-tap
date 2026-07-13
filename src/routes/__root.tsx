@@ -84,6 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "صفحة تبويب جديدة زجاجية تحتوي على ساعة، بحث، اختصارات، خلفيات | A glassy new tab page with clock, search, shortcuts, animated backgrounds, custom photo import.",
       },
       { name: "author", content: "Lovable" },
+      { name: "google-site-verification", content: "Zx1Nxx4yBSmr4tbD2-318d22o0Iz052Gt-aEU5uCuWM" },
       { property: "og:title", content: "RRN Glass Tab — New Tab Dashboard" },
       {
         property: "og:description",
