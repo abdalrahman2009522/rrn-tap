@@ -33,6 +33,7 @@ function NewTab() {
 
   return (
     <main className="relative min-h-screen overflow-hidden">
+      <h1 className="sr-only">Glassy New Tab Dashboard — clock, search, shortcuts, and animated backgrounds</h1>
       {/* Background layer */}
       {preset ? (
         <div
